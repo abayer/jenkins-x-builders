@@ -47,6 +47,11 @@ pipelineConfig:
                 - --image=gcr.io/jenkinsxio/builder-rubybase:0.0.41
 
           - name: build-and-push
+            containerOptions:
+              resources:
+                limits:
+                  cpu: 2
+                  memory: 4096Mi
             # builders
             parallel:
               - name: maven-java11
