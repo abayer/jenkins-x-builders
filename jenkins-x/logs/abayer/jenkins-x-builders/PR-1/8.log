@@ -1,0 +1,599 @@
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-credential-initializer-q6hkd[0m
+{"level":"warn","ts":1573745001.6463814,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745001.6468275,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-working-dir-initializer-b5lq4[0m
+{"level":"warn","ts":1573745002.6127455,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1573745002.6142602,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-git-source-abayer-jenkins-x-builders-pr-1-qd684[0m
+{"level":"warn","ts":1573745010.6835082,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745012.1230514,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/jenkins-x-builders.git @ master in path /workspace/source"}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e17b7c99b77cc6433e0d33ae1ff384df0e901f9b,1:dc1408bcc419a9afd3ecc8f1265e891d56370b76
+DEBUG: ran git fetch --unshallow origin dc1408bcc419a9afd3ecc8f1265e891d56370b76: e17b7c99b77cc6433e0d33ae1ff384df0e901f9b: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard e17b7c99b77cc6433e0d33ae1ff384df0e901f9b in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge dc1408bcc419a9afd3ecc8f1265e891d56370b76 in 
+Merged SHA 3760adb1e3954314ea3ebd3b6a640ab7290d98c8 with commit message 'Merge commit 'dc1408bcc419a9afd3ecc8f1265e891d56370b76'' into base branch master
+Merged SHA dc1408bcc419a9afd3ecc8f1265e891d56370b76 with commit message 'hey new version' into base branch master
+Merged SHA 9dc39b72c3cffb2f7cc74eae0442a77db4c4480e with commit message 'switch back a version' into base branch master
+Merged SHA 97d6b326a482097ff142685b58a6ccbbad578db1 with commit message 'fix again' into base branch master
+Merged SHA 25c52eeeb864c17dff52c4d402d165f5033339af with commit message 'fix' into base branch master
+Merged SHA ac0aad75e006e10a25de56d884e48abeabf83200 with commit message 'experiment' into base branch master
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-step2[0m
+updating builder-maven-java11
+/workspace/source/builder-maven-java11 /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-maven-nodejs
+/workspace/source/builder-maven-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go
+/workspace/source/builder-go /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-maven
+/workspace/source/builder-go-maven /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-terraform
+/workspace/source/builder-terraform /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-nodejs
+/workspace/source/builder-go-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-step3[0m
+/builder/home/kaniko-secret.json
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-1[0m and container [32mstep-build-and-push-maven-java11[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/builder-base:0.0.71 
+[36mINFO[0m[0000] Found sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e in local cache 
+[36mINFO[0m[0000] Found manifest at /workspace/sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e.json 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:0265e5263a69640f022f1b6377922d9c62e1c38a666c49c6e27b52ce524779c3... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:384e38e0d9750fcff23d9dce3d20cd5437aa197ebd2afabe58806d53082b9416... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN curl https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz | tar -xz &&    mv /home/jenkins/jdk-11.0.2 /usr/java &&    rm -rf /home/jenkins/jdk-11.0.2 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:51c7606f5fb935169bf305cce378d5041dd33fbac33a545cf80c6844459de1ea... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN ln -s /usr/java/bin/java /usr/bin/java 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/******-**-experiment/cache:8bb8a2dab967e28f1987b335980efbc63bc57cfcf8e284326701fb39c691c810... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN ln -s /usr/java/bin/javac /usr/bin/javac 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/******-**-experiment/cache:355679523d6052e8571e6d6ac5c124f2babc93d01e1852775981818905099e53... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN ln -s /usr/java/bin/javadoc /usr/bin/javadoc 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/******-**-experiment/cache:6bac5ae5b106bee316d17ae2556862ca63e1c0bc041d72148329f0aece736ab0... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN curl -f  -o ./updatebot -L https://repo1.maven.org/maven2/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/******-**-experiment/cache:a2b998f2427984c9ef26f5b1c3330ff557d86b7ce85978c6053fcbee4970e578... 
+[36mINFO[0m[0004] No cached layer found for cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0004] Unpacking rootfs as cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ requires it. 
+[36mINFO[0m[0054] Taking snapshot of full filesystem...        
+[36mINFO[0m[0087] ENV MAVEN_VERSION 3.6.2                      
+[36mINFO[0m[0087] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0087] RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv 
+[36mINFO[0m[0087] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0088] Taking snapshot of files...                  
+[36mINFO[0m[0088] ENV M2_HOME /opt/apache-maven-$MAVEN_VERSION 
+[36mINFO[0m[0088] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0088] ENV maven.home $M2_HOME                      
+[36mINFO[0m[0088] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0088] ENV M2 $M2_HOME/bin                          
+[36mINFO[0m[0088] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0088] ENV PATH $M2:$PATH                           
+[36mINFO[0m[0088] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0088] RUN curl https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz | tar -xz &&    mv /home/jenkins/jdk-11.0.2 /usr/java &&    rm -rf /home/jenkins/jdk-11.0.2 
+[36mINFO[0m[0088] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0093] Taking snapshot of files...                  
+[36mINFO[0m[0100] RUN ln -s /usr/java/bin/java /usr/bin/java   
+[36mINFO[0m[0100] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0100] Taking snapshot of files...                  
+[36mINFO[0m[0100] RUN ln -s /usr/java/bin/javac /usr/bin/javac 
+[36mINFO[0m[0100] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0100] Taking snapshot of files...                  
+[36mINFO[0m[0100] RUN ln -s /usr/java/bin/javadoc /usr/bin/javadoc 
+[36mINFO[0m[0100] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0100] Taking snapshot of files...                  
+[36mINFO[0m[0100] ENV JAVA_HOME /usr/java                      
+[36mINFO[0m[0100] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0100] ENV UPDATEBOT_VERSION 1.1.41                 
+[36mINFO[0m[0100] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0100] RUN curl -f  -o ./updatebot -L https://repo1.maven.org/maven2/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0100] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0100] Taking snapshot of files...                  
+[36mINFO[0m[0100] ENV JX_VERSION 2.0.983                       
+[36mINFO[0m[0100] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0100] RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0100] cmd: /bin/sh                                 
+[36mINFO[0m[0100] args: [-c curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'batch-1' : container 'step-build-and-push-maven-java11'. The execution of the pipeline has stopped.[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-credential-initializer-fc4dz[0m
+{"level":"warn","ts":1573745002.6101038,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745002.610703,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-working-dir-initializer-lfkg7[0m
+{"level":"warn","ts":1573745003.5378196,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1573745003.5392535,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-git-source-abayer-jenkins-x-builders-pr-1-5d86v[0m
+{"level":"warn","ts":1573745011.6224499,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745013.0357745,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/jenkins-x-builders.git @ master in path /workspace/source"}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e17b7c99b77cc6433e0d33ae1ff384df0e901f9b,1:dc1408bcc419a9afd3ecc8f1265e891d56370b76
+DEBUG: ran git fetch --unshallow origin dc1408bcc419a9afd3ecc8f1265e891d56370b76: e17b7c99b77cc6433e0d33ae1ff384df0e901f9b: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard e17b7c99b77cc6433e0d33ae1ff384df0e901f9b in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge dc1408bcc419a9afd3ecc8f1265e891d56370b76 in 
+Merged SHA 4f2f81ed046ce377ddd9d73cac41dc25674a10ed with commit message 'Merge commit 'dc1408bcc419a9afd3ecc8f1265e891d56370b76'' into base branch master
+Merged SHA dc1408bcc419a9afd3ecc8f1265e891d56370b76 with commit message 'hey new version' into base branch master
+Merged SHA 9dc39b72c3cffb2f7cc74eae0442a77db4c4480e with commit message 'switch back a version' into base branch master
+Merged SHA 97d6b326a482097ff142685b58a6ccbbad578db1 with commit message 'fix again' into base branch master
+Merged SHA 25c52eeeb864c17dff52c4d402d165f5033339af with commit message 'fix' into base branch master
+Merged SHA ac0aad75e006e10a25de56d884e48abeabf83200 with commit message 'experiment' into base branch master
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-step2[0m
+updating builder-maven-java11
+/workspace/source/builder-maven-java11 /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-maven-nodejs
+/workspace/source/builder-maven-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go
+/workspace/source/builder-go /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-maven
+/workspace/source/builder-go-maven /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-terraform
+/workspace/source/builder-terraform /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-nodejs
+/workspace/source/builder-go-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-step3[0m
+/builder/home/kaniko-secret.json
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-2[0m and container [32mstep-build-and-push-go-maven[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/builder-base:0.0.71 
+[36mINFO[0m[0000] Found sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e in local cache 
+[36mINFO[0m[0000] Found manifest at /workspace/sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e.json 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:ef303d225dcfff18b00d1d483a27c1b82b0fbcd9ecf52d725634dd99c2a60660... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN curl -f -o /etc/yum.repos.d/vbatts-bazel-epel-7.repo  https://copr.fedorainfracloud.org/coprs/vbatts/bazel/repo/epel-7/vbatts-bazel-epel-7.repo   && yum install -y bazel   && yum clean all 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:392335ec9aacd23b0f99f39f30f470c4dd866d7027dc06c3b2a4fff4313d8d96... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz &&   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz &&   rm go${GOLANG_VERSION}.linux-amd64.tar.gz 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:d07ccfe96ae34949c5ceea4d899a81292043dcf06e4ccc63a1390fc64dd6467c... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN wget https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz &&   tar -xzf glide-$GLIDE_VERSION-linux-amd64.tar.gz &&   mv linux-amd64 /usr/local/glide &&   rm glide-$GLIDE_VERSION-linux-amd64.tar.gz 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/******-**-experiment/cache:bbc18ff04fce8cd10e88e6bdf9cd01b113f35e3e7b259da2b33da576a31cfe8d... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN wget https://github.com/golang/dep/releases/download/$DEP_VERSION/dep-linux-amd64 && chmod +x dep-linux-amd64 &&   mv dep-linux-amd64 /usr/local/dep 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/******-**-experiment/cache:c0dca8b37580880794df20c5eddf7652aee36a9ca430242e7edba8ac238e90e3... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN wget https://github.com/progrium/gh-release/releases/download/v$GH_RELEASE_VERSION/gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz &&   tar -xzf gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz &&   mv gh-release /usr/local/gh-release &&   rm gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/******-**-experiment/cache:272e7b23ad67ac8e96d7bf17eaa807b4e34bd61d3e9ee610b235c0402b9da314... 
+[36mINFO[0m[0003] Using caching version of cmd: RUN wget https://github.com/google/protobuf/releases/download/v${PROTOBUF}/protoc-${PROTOBUF}-linux-x86_64.zip &&   unzip protoc-${PROTOBUF}-linux-x86_64.zip -d protoc &&   chmod +x protoc && cp protoc/bin/protoc /usr/bin/protoc && rm -rf protoc 
+[36mINFO[0m[0003] Checking for cached layer gcr.io/******-**-experiment/cache:6242bcc54532a210a61efeb6da4dd34be6677a78d8dbf9c6f06e85a5b83e3ba3... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN go get github.com/DATA-DOG/godog/cmd/godog &&   mv $GOPATH/bin/godog /usr/local/ &&   curl -Lf -o hugo.zip https://github.com/gohugoio/hugo/archive/v${HUGO_VERSION}.zip &&   unzip hugo.zip &&   cd hugo-${HUGO_VERSION} &&   GOBIN=/usr/local go install -tags extended &&   cd .. && rm -fr hugo* &&   hugo version &&   go get github.com/derekparker/delve/cmd/dlv &&   mv $GOPATH/bin/* /usr/local/ &&   go get gotest.tools/gotestsum &&   mv $GOPATH/bin/gotestsum /usr/local/ &&   go clean -cache -modcache && rm -rf $GOPATH/src/* 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/******-**-experiment/cache:b2a2e1e267440e1e04ef38487e6e8b2773553728a04baee6e61966419c7cf14c... 
+[36mINFO[0m[0004] Using caching version of cmd: RUN yum remove -y java-1.8.0-openjdk-devel java-1.8.0-openjdk-headless &&     yum install -y java-1.8.0-openjdk-devel.i686 &&     yum clean all 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/******-**-experiment/cache:f2aba327d2640942b33a273bfa87fcd91d332d0df6723bd933e2a71201bd78b4... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN curl -f  -o ./updatebot -L https://repo1.maven.org/maven2/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/******-**-experiment/cache:b6fbef4b6a1db605eee625f1329294cb2f86a899fd1a1b9048062846739e3154... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv 
+[36mINFO[0m[0005] Using files from context: [/workspace/source/builder-go-maven/set_java] 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/******-**-experiment/cache:bbfe8c3fe605723676174edfb3a68c06a2ea330de9b5a56e7b8438797c3c5b70... 
+[36mINFO[0m[0006] Using caching version of cmd: RUN $M2/set_java && rm $M2/set_java 
+[36mINFO[0m[0006] Checking for cached layer gcr.io/******-**-experiment/cache:0dc9becb678807a4ee07ffa3a2fb54ca37574bbf01941a6cbf58bb1634f76669... 
+[36mINFO[0m[0006] No cached layer found for cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0006] Unpacking rootfs as cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ requires it. 
+[36mINFO[0m[0049] Taking snapshot of full filesystem...        
+[36mINFO[0m[0086] RUN curl -f -o /etc/yum.repos.d/vbatts-bazel-epel-7.repo  https://copr.fedorainfracloud.org/coprs/vbatts/bazel/repo/epel-7/vbatts-bazel-epel-7.repo   && yum install -y bazel   && yum clean all 
+[36mINFO[0m[0086] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0091] Taking snapshot of files...                  
+[36mINFO[0m[0098] ENV GOLANG_VERSION 1.12.4                    
+[36mINFO[0m[0098] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0098] RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz &&   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz &&   rm go${GOLANG_VERSION}.linux-amd64.tar.gz 
+[36mINFO[0m[0098] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0104] Taking snapshot of files...                  
+[36mINFO[0m[0113] ENV GLIDE_VERSION v0.13.1                    
+[36mINFO[0m[0113] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0113] ENV GO15VENDOREXPERIMENT 1                   
+[36mINFO[0m[0113] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0113] RUN wget https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz &&   tar -xzf glide-$GLIDE_VERSION-linux-amd64.tar.gz &&   mv linux-amd64 /usr/local/glide &&   rm glide-$GLIDE_VERSION-linux-amd64.tar.gz 
+[36mINFO[0m[0113] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0114] Taking snapshot of files...                  
+[36mINFO[0m[0114] ENV DEP_VERSION v0.5.0                       
+[36mINFO[0m[0114] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0114] RUN wget https://github.com/golang/dep/releases/download/$DEP_VERSION/dep-linux-amd64 && chmod +x dep-linux-amd64 &&   mv dep-linux-amd64 /usr/local/dep 
+[36mINFO[0m[0114] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0114] Taking snapshot of files...                  
+[36mINFO[0m[0114] ENV GH_RELEASE_VERSION 2.2.1                 
+[36mINFO[0m[0114] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0114] RUN wget https://github.com/progrium/gh-release/releases/download/v$GH_RELEASE_VERSION/gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz &&   tar -xzf gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz &&   mv gh-release /usr/local/gh-release &&   rm gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz 
+[36mINFO[0m[0114] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0115] Taking snapshot of files...                  
+[36mINFO[0m[0115] ENV PROTOBUF 3.5.1                           
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] RUN wget https://github.com/google/protobuf/releases/download/v${PROTOBUF}/protoc-${PROTOBUF}-linux-x86_64.zip &&   unzip protoc-${PROTOBUF}-linux-x86_64.zip -d protoc &&   chmod +x protoc && cp protoc/bin/protoc /usr/bin/protoc && rm -rf protoc 
+[36mINFO[0m[0115] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0115] Taking snapshot of files...                  
+[36mINFO[0m[0115] ENV PATH $PATH:/usr/local/go/bin             
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV PATH $PATH:/usr/local/glide              
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV PATH $PATH:/usr/local/dep                
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV PATH $PATH:/usr/local/                   
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV GOROOT /usr/local/go                     
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV GOPATH=/home/jenkins/go                  
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV PATH $PATH:$GOPATH/bin                   
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] ENV HUGO_VERSION 0.58.0                      
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] RUN go get github.com/DATA-DOG/godog/cmd/godog &&   mv $GOPATH/bin/godog /usr/local/ &&   curl -Lf -o hugo.zip https://github.com/gohugoio/hugo/archive/v${HUGO_VERSION}.zip &&   unzip hugo.zip &&   cd hugo-${HUGO_VERSION} &&   GOBIN=/usr/local go install -tags extended &&   cd .. && rm -fr hugo* &&   hugo version &&   go get github.com/derekparker/delve/cmd/dlv &&   mv $GOPATH/bin/* /usr/local/ &&   go get gotest.tools/gotestsum &&   mv $GOPATH/bin/gotestsum /usr/local/ &&   go clean -cache -modcache && rm -rf $GOPATH/src/* 
+[36mINFO[0m[0115] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0117] Taking snapshot of files...                  
+[36mINFO[0m[0119] RUN yum remove -y java-1.8.0-openjdk-devel java-1.8.0-openjdk-headless &&     yum install -y java-1.8.0-openjdk-devel.i686 &&     yum clean all 
+[36mINFO[0m[0119] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0127] Taking snapshot of files...                  
+[36mINFO[0m[0139] ENV UPDATEBOT_VERSION 1.1.41                 
+[36mINFO[0m[0139] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0139] RUN curl -f  -o ./updatebot -L https://repo1.maven.org/maven2/io/jenkins/updatebot/updatebot/${UPDATEBOT_VERSION}/updatebot-${UPDATEBOT_VERSION}.jar &&   chmod +x updatebot &&   cp updatebot /usr/bin/ &&   rm -rf updatebot 
+[36mINFO[0m[0139] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0140] Taking snapshot of files...                  
+[36mINFO[0m[0140] ENV MAVEN_VERSION 3.6.2                      
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] RUN curl -f -L http://central.maven.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -C /opt -xzv 
+[36mINFO[0m[0140] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0140] Taking snapshot of files...                  
+[36mINFO[0m[0140] ENV M2_HOME /opt/apache-maven-$MAVEN_VERSION 
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] ENV maven.home $M2_HOME                      
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] ENV M2 $M2_HOME/bin                          
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] ENV PATH $M2:$PATH                           
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] Using files from context: [/workspace/source/builder-go-maven/set_java] 
+[36mINFO[0m[0140] COPY set_java $M2                            
+[36mINFO[0m[0140] Taking snapshot of files...                  
+[36mINFO[0m[0140] RUN $M2/set_java && rm $M2/set_java          
+[36mINFO[0m[0140] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0140] Taking snapshot of files...                  
+[36mINFO[0m[0140] ENV JX_VERSION 2.0.983                       
+[36mINFO[0m[0140] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0140] RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0140] cmd: /bin/sh                                 
+[36mINFO[0m[0140] args: [-c curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'batch-2' : container 'step-build-and-push-go-maven'. The execution of the pipeline has stopped.[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-credential-initializer-8bkxs[0m
+{"level":"warn","ts":1573745004.5772328,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745004.5777416,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-working-dir-initializer-z272r[0m
+{"level":"warn","ts":1573745005.8317597,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1573745005.8331351,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-git-source-abayer-jenkins-x-builders-pr-1-vbt74[0m
+{"level":"warn","ts":1573745013.9136436,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745015.3702564,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/jenkins-x-builders.git @ master in path /workspace/source"}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e17b7c99b77cc6433e0d33ae1ff384df0e901f9b,1:dc1408bcc419a9afd3ecc8f1265e891d56370b76
+DEBUG: ran git fetch --unshallow origin dc1408bcc419a9afd3ecc8f1265e891d56370b76: e17b7c99b77cc6433e0d33ae1ff384df0e901f9b: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard e17b7c99b77cc6433e0d33ae1ff384df0e901f9b in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge dc1408bcc419a9afd3ecc8f1265e891d56370b76 in 
+Merged SHA 30d4ed03d12d6b05ced5498981e184b8920186cb with commit message 'Merge commit 'dc1408bcc419a9afd3ecc8f1265e891d56370b76'' into base branch master
+Merged SHA dc1408bcc419a9afd3ecc8f1265e891d56370b76 with commit message 'hey new version' into base branch master
+Merged SHA 9dc39b72c3cffb2f7cc74eae0442a77db4c4480e with commit message 'switch back a version' into base branch master
+Merged SHA 97d6b326a482097ff142685b58a6ccbbad578db1 with commit message 'fix again' into base branch master
+Merged SHA 25c52eeeb864c17dff52c4d402d165f5033339af with commit message 'fix' into base branch master
+Merged SHA ac0aad75e006e10a25de56d884e48abeabf83200 with commit message 'experiment' into base branch master
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-step2[0m
+updating builder-maven-java11
+/workspace/source/builder-maven-java11 /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-maven-nodejs
+/workspace/source/builder-maven-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go
+/workspace/source/builder-go /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-maven
+/workspace/source/builder-go-maven /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-terraform
+/workspace/source/builder-terraform /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-nodejs
+/workspace/source/builder-go-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-step3[0m
+/builder/home/kaniko-secret.json
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-3[0m and container [32mstep-build-and-push-gradle[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/builder-base:0.0.71 
+[36mINFO[0m[0000] Found sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e in local cache 
+[36mINFO[0m[0000] Found manifest at /workspace/sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e.json 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:734cfb86da83d234c64086b348b7148b40c88033b2b501d09381e2bd764a520f... 
+[36mINFO[0m[0000] Using caching version of cmd: RUN yum install -y java-1.8.0-openjdk-devel &&     yum -y groupinstall 'Development Tools' &&     yum clean all &&     wget https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_VERSION}.zip &&     unzip sdk-tools-linux-${ANDROID_VERSION}.zip -d android-sdk-linux &&     rm sdk-tools-linux-${ANDROID_VERSION}.zip && mv android-sdk-linux /opt/ &&     yes | sdkmanager --licenses &&     sdkmanager "platform-tools" &&     yes | sdkmanager     "platforms;android-28"     "build-tools;28.0.0" 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:3c51784010453a0d443d1efea7f1307be40cb3c0b2b7065e560c9ebc2df4230f... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN set -o errexit -o nounset 	&& echo "Downloading Gradle" 	&& wget -O gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" 		&& echo "Checking download hash" 	&& echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum -c - 		&& echo "Installing Gradle" 	&& unzip gradle.zip 	&& rm gradle.zip 	&& mkdir -p /opt 	&& mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" 	&& ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:87e6aadac3be1f4561ac6a0e354fb5f6a135fb78b239bd9469a405b2a2ca5629... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ requires it. 
+[36mINFO[0m[0044] Taking snapshot of full filesystem...        
+[36mINFO[0m[0083] CMD ["gradle"]                               
+[36mINFO[0m[0083] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0083] ENV ANDROID_VERSION 4333796                  
+[36mINFO[0m[0083] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0083] ENV ANDROID_HOME /opt/android-sdk-linux      
+[36mINFO[0m[0083] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0083] ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools 
+[36mINFO[0m[0083] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0083] RUN yum install -y java-1.8.0-openjdk-devel &&     yum -y groupinstall 'Development Tools' &&     yum clean all &&     wget https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_VERSION}.zip &&     unzip sdk-tools-linux-${ANDROID_VERSION}.zip -d android-sdk-linux &&     rm sdk-tools-linux-${ANDROID_VERSION}.zip && mv android-sdk-linux /opt/ &&     yes | sdkmanager --licenses &&     sdkmanager "platform-tools" &&     yes | sdkmanager     "platforms;android-28"     "build-tools;28.0.0" 
+[36mINFO[0m[0083] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0096] Taking snapshot of files...                  
+[36mINFO[0m[0113] ENV GRADLE_HOME /opt/gradle                  
+[36mINFO[0m[0113] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0113] ENV GRADLE_VERSION 4.6                       
+[36mINFO[0m[0113] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0113] ARG GRADLE_DOWNLOAD_SHA256=98bd5fd2b30e070517e03c51cbb32beee3e2ee1a84003a5a5d748996d4b1b915 
+[36mINFO[0m[0113] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0113] RUN set -o errexit -o nounset 	&& echo "Downloading Gradle" 	&& wget -O gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" 		&& echo "Checking download hash" 	&& echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum -c - 		&& echo "Installing Gradle" 	&& unzip gradle.zip 	&& rm gradle.zip 	&& mkdir -p /opt 	&& mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" 	&& ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle 
+[36mINFO[0m[0113] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0114] Taking snapshot of files...                  
+[36mINFO[0m[0115] ENV JX_VERSION 2.0.983                       
+[36mINFO[0m[0115] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0115] RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0115] cmd: /bin/sh                                 
+[36mINFO[0m[0115] args: [-c curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'batch-3' : container 'step-build-and-push-gradle'. The execution of the pipeline has stopped.[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-credential-initializer-z8k2s[0m
+{"level":"warn","ts":1573745006.0178556,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745006.0194318,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-working-dir-initializer-xv94f[0m
+{"level":"warn","ts":1573745007.2613668,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1573745007.264022,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-git-source-abayer-jenkins-x-builders-pr-1-r58p2[0m
+{"level":"warn","ts":1573745015.2878358,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745016.9996347,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/jenkins-x-builders.git @ master in path /workspace/source"}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e17b7c99b77cc6433e0d33ae1ff384df0e901f9b,1:dc1408bcc419a9afd3ecc8f1265e891d56370b76
+DEBUG: ran git fetch --unshallow origin dc1408bcc419a9afd3ecc8f1265e891d56370b76: e17b7c99b77cc6433e0d33ae1ff384df0e901f9b: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard e17b7c99b77cc6433e0d33ae1ff384df0e901f9b in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge dc1408bcc419a9afd3ecc8f1265e891d56370b76 in 
+Merged SHA 9e6e34e27f8e469ea88929a5609ef9317cf5a8e2 with commit message 'Merge commit 'dc1408bcc419a9afd3ecc8f1265e891d56370b76'' into base branch master
+Merged SHA dc1408bcc419a9afd3ecc8f1265e891d56370b76 with commit message 'hey new version' into base branch master
+Merged SHA 9dc39b72c3cffb2f7cc74eae0442a77db4c4480e with commit message 'switch back a version' into base branch master
+Merged SHA 97d6b326a482097ff142685b58a6ccbbad578db1 with commit message 'fix again' into base branch master
+Merged SHA 25c52eeeb864c17dff52c4d402d165f5033339af with commit message 'fix' into base branch master
+Merged SHA ac0aad75e006e10a25de56d884e48abeabf83200 with commit message 'experiment' into base branch master
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-step2[0m
+updating builder-maven-java11
+/workspace/source/builder-maven-java11 /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-maven-nodejs
+/workspace/source/builder-maven-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go
+/workspace/source/builder-go /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-maven
+/workspace/source/builder-go-maven /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-terraform
+/workspace/source/builder-terraform /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-nodejs
+/workspace/source/builder-go-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-step3[0m
+/builder/home/kaniko-secret.json
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-4[0m and container [32mstep-build-and-push-jx[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/builder-base:0.0.71 
+[36mINFO[0m[0000] Found sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e in local cache 
+[36mINFO[0m[0000] Found manifest at /workspace/sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e.json 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:5a52179a5e8bfea771d2c13807b0b0faaa34843dc21983fcb208ad809ea4cbb1... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ requires it. 
+[36mINFO[0m[0055] Taking snapshot of full filesystem...        
+[36mINFO[0m[0091] ENV JX_VERSION 2.0.983                       
+[36mINFO[0m[0091] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0091] RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0091] cmd: /bin/sh                                 
+[36mINFO[0m[0091] args: [-c curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'batch-4' : container 'step-build-and-push-jx'. The execution of the pipeline has stopped.[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-credential-initializer-kh2nx[0m
+{"level":"warn","ts":1573745008.040267,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745008.0407488,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-working-dir-initializer-rtmg9[0m
+{"level":"warn","ts":1573745008.3841524,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1573745008.3852623,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-git-source-abayer-jenkins-x-builders-pr-1-kc4jk[0m
+{"level":"warn","ts":1573745017.4217088,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1573745018.8532362,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/jenkins-x-builders.git @ master in path /workspace/source"}
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e17b7c99b77cc6433e0d33ae1ff384df0e901f9b,1:dc1408bcc419a9afd3ecc8f1265e891d56370b76
+DEBUG: ran git fetch --unshallow origin dc1408bcc419a9afd3ecc8f1265e891d56370b76: e17b7c99b77cc6433e0d33ae1ff384df0e901f9b: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard e17b7c99b77cc6433e0d33ae1ff384df0e901f9b in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge dc1408bcc419a9afd3ecc8f1265e891d56370b76 in 
+Merged SHA 784c59ec8eea711d7c50ad33153027676ba84b01 with commit message 'Merge commit 'dc1408bcc419a9afd3ecc8f1265e891d56370b76'' into base branch master
+Merged SHA dc1408bcc419a9afd3ecc8f1265e891d56370b76 with commit message 'hey new version' into base branch master
+Merged SHA 9dc39b72c3cffb2f7cc74eae0442a77db4c4480e with commit message 'switch back a version' into base branch master
+Merged SHA 97d6b326a482097ff142685b58a6ccbbad578db1 with commit message 'fix again' into base branch master
+Merged SHA 25c52eeeb864c17dff52c4d402d165f5033339af with commit message 'fix' into base branch master
+Merged SHA ac0aad75e006e10a25de56d884e48abeabf83200 with commit message 'experiment' into base branch master
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-step2[0m
+updating builder-maven-java11
+/workspace/source/builder-maven-java11 /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-maven-nodejs
+/workspace/source/builder-maven-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go
+/workspace/source/builder-go /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-maven
+/workspace/source/builder-go-maven /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-terraform
+/workspace/source/builder-terraform /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+updating builder-go-nodejs
+/workspace/source/builder-go-nodejs /workspace/source
+FROM gcr.io/jenkinsxio/builder-base:0.0.71
+/workspace/source
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-step3[0m
+/builder/home/kaniko-secret.json
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mabayer-jenkins-x-builders-pr-1-p6lwn-8[0m stage [32mbatch-5[0m and container [32mstep-build-and-push-python37[0m
+[36mINFO[0m[0000] Downloading base image gcr.io/jenkinsxio/builder-base:0.0.71 
+[36mINFO[0m[0000] Found sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e in local cache 
+[36mINFO[0m[0000] Found manifest at /workspace/sha256:b6f5861859f3654d16def446cd3b1d0e0d4f1b4e4deb5662d3ff8e97407be96e.json 
+[36mINFO[0m[0000] Checking for cached layer gcr.io/******-**-experiment/cache:27fcca2c5902332e26b3289c737f04615a07982f9bb5a84d4408c079daa7a634... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN yum -y install gcc openssl-devel bzip2-devel libffi-devel && yum clean all 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:aac23825e28ca3d1422020eeade865c8e0645246bbe1d8addc3dd8de4464df38... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN cd /usr/src &&     wget https://www.python.org/ftp/python/${PYTHONVERSION}/Python-${PYTHONVERSION}.tgz &&     tar xzf Python-${PYTHONVERSION}.tgz &&     cd Python-${PYTHONVERSION} &&     ./configure --enable-optimizations &&     make altinstall &&     rm /usr/src/Python-${PYTHONVERSION}.tgz &&     cd ../ &&     rm -rf /usr/src/Python-${PYTHONVERSION} &&     ln -fs /usr/local/bin/python3.7 /usr/bin/python3 &&     yum -y remove gcc openssl-devel bzip2-devel &&     yum clean all &&     easy_install-3.7 pip &&     pip install --upgrade pip &&     pip install --upgrade awscli &&     pip install --upgrade awscli-local 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/******-**-experiment/cache:4611bbd0a2113e063d19e0fdaf3adf836b323d8825b9a8858dede31d8675f741... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ requires it. 
+[36mINFO[0m[0050] Taking snapshot of full filesystem...        
+[36mINFO[0m[0086] ENV PYTHONVERSION 3.7.1                      
+[36mINFO[0m[0086] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0086] RUN yum -y install gcc openssl-devel bzip2-devel libffi-devel && yum clean all 
+[36mINFO[0m[0086] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0087] Taking snapshot of files...                  
+[36mINFO[0m[0088] RUN cd /usr/src &&     wget https://www.python.org/ftp/python/${PYTHONVERSION}/Python-${PYTHONVERSION}.tgz &&     tar xzf Python-${PYTHONVERSION}.tgz &&     cd Python-${PYTHONVERSION} &&     ./configure --enable-optimizations &&     make altinstall &&     rm /usr/src/Python-${PYTHONVERSION}.tgz &&     cd ../ &&     rm -rf /usr/src/Python-${PYTHONVERSION} &&     ln -fs /usr/local/bin/python3.7 /usr/bin/python3 &&     yum -y remove gcc openssl-devel bzip2-devel &&     yum clean all &&     easy_install-3.7 pip &&     pip install --upgrade pip &&     pip install --upgrade awscli &&     pip install --upgrade awscli-local 
+[36mINFO[0m[0088] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0094] Taking snapshot of files...                  
+[36mINFO[0m[0103] ENV JX_VERSION 2.0.983                       
+[36mINFO[0m[0103] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0103] RUN curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/ 
+[36mINFO[0m[0103] cmd: /bin/sh                                 
+[36mINFO[0m[0103] args: [-c curl -f -L https://github.com/jenkins-x/**/releases/download/v${JX_VERSION}/**-linux-amd64.tar.gz | tar xzv &&   mv ** /usr/bin/] 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404 Not Found
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+error building image: error building stage: waiting for process to exit: exit status 2
+[31m
+Pipeline failed on stage 'batch-5' : container 'step-build-and-push-python37'. The execution of the pipeline has stopped.[0m
