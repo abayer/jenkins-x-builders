@@ -24,7 +24,6 @@ RUN yum install -y ${INSTALL_PKGS} && \
 	 curl -fsSL ${GRAAL_CE_URL} | tar -xzC ${GRAALVM_HOME} --strip-components=1  && \
      ### Cleanup     
      yum clean all && \
-     rm -f /tmp/graalvm-ce-amd64.tar.gz && \
      rm -rf /var/cache/yum
      ###
 
